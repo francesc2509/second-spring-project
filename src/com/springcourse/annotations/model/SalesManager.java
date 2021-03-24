@@ -5,8 +5,16 @@ import org.springframework.stereotype.Component;
 
 @Component("salesManager")
 public class SalesManager implements Employee {
-	@Autowired
 	private FinancialReportBuilder financialReportBuilder;
+	
+	public FinancialReportBuilder getFinancialReportBuilder() {
+		return financialReportBuilder;
+	}
+
+	@Autowired
+	public void setFinancialReportBuilder(FinancialReportBuilder financialReportBuilder) {
+		this.financialReportBuilder = financialReportBuilder;
+	}
 
 	@Override
 	public String getTasks() {
