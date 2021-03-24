@@ -1,6 +1,7 @@
 package com.springcourse.annotations.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("salesManager")
@@ -12,6 +13,7 @@ public class SalesManager implements Employee {
 	}
 
 	@Autowired
+	@Qualifier("financialReportBuilderImpl4")
 	public void setFinancialReportBuilder(FinancialReportBuilder financialReportBuilder) {
 		this.financialReportBuilder = financialReportBuilder;
 	}
