@@ -8,6 +8,8 @@ public class SalesManager implements Employee {
 	
 	private FinancialReportBuilder financialReportBuilder;
 
+	public SalesManager() {}
+	
 	@Autowired
 	public SalesManager(FinancialReportBuilder financialReportBuilder) {
 		this.financialReportBuilder = financialReportBuilder;
