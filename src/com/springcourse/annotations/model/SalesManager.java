@@ -1,12 +1,13 @@
 package com.springcourse.annotations.model;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("salesManager")
-@Scope("prototype")
 public class SalesManager implements Employee {
 	private FinancialReportBuilder financialReportBuilder;
 	
@@ -20,6 +21,16 @@ public class SalesManager implements Employee {
 		this.financialReportBuilder = financialReportBuilder;
 	}
 
+	@PostConstruct
+	private void init() {
+		System.out.println("Bean has just been created");
+	}
+	
+	@PreDestroy
+	private void destroy() {
+		System.out.println("Bean is going to be destroyed");
+	}
+	
 	@Override
 	public String getTasks() {
 		return "Manage company's products";
