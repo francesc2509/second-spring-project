@@ -14,6 +14,12 @@ public class Main {
 		System.out.println(salesManager.getTasks());
 		System.out.println(salesManager.getReport());
 		
+		Employee salesManager2 = context.getBean("salesManager", Employee.class);
+		System.out.println(salesManager.getTasks());
+		System.out.println(salesManager.getReport());
+		
+		System.out.println(salesManager + " - " + salesManager2);
+		
 		context.close();
 	}
 
